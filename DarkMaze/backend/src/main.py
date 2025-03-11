@@ -14,10 +14,10 @@ FRONTEND_URL = "http://localhost:8088"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=[FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["GET", "POST"],
-    allow_headers=["*"],
+    allow_headers=["Content-Type", "Set-Cookie", "Authorization"],
 )
 
 class CookieManager:
